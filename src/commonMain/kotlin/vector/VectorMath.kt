@@ -64,3 +64,12 @@ val LongVector.length get() = sqrt(data.fold(0.0) { acc, d -> acc + d * d })
 val IntVector.length get() = sqrt(data.fold(0.0) { acc, d -> acc + d * d })
 val ShortVector.length get() = sqrt(data.fold(0.0) { acc, d -> acc + d * d })
 val ByteVector.length get() = sqrt(data.fold(0.0) { acc, d -> acc + d * d })
+
+
+/// Normalized Vector
+val DoubleVector.normalized get() = this / length
+val FloatVector.normalized get() = this / length
+val LongVector.normalized get() = this / length
+val IntVector.normalized get() = this / length
+val ShortVector.normalized get() = this / length
+val ByteVector.normalized get() = this / length
