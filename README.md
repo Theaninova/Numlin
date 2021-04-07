@@ -1,6 +1,8 @@
 # Numlin
 
-Numlin is a Kotlin-first Math library similar to Numpy.
+Numlin is a WIP Kotlin Math library similar to Numpy, that provides a very intuitive way
+to interact with Vectors and Matrices while introducing close to no runtime overhead compared
+to a Java implementation with primitive arrays.
 
 ## Features
 
@@ -28,7 +30,7 @@ combination of types and assignment operations
 
 * **Generator Constructor**, where `DoubleVector(5) { it * 2 }` evaluates to `[2, 4, 6, 8, 10]`
 
-* **GLSL Style Component Swizzling** `vector.xy + vector.yx`
+* **Up to 4D GLSL Style Component Swizzling** `vector.xy + vector.yx`
 
 #### Examples
 
@@ -48,6 +50,8 @@ val (x, y) = a
 
 #### Vector Operations List
 
+*Warning: all of these functions assume both vectors are compatible, aka same-sized*
+
 | Type \ Operator  |  Scalar | Vector | Matrix |
 | --------- | ------------ | ------- | ----- |
 | `+` |  Add to each element  | Element-wise add |  |
@@ -66,9 +70,18 @@ val (x, y) = a
 | ----- | ----- |
 | `T` | Transpose Vector |
 | `length` | Euclidean Length of the vector |
+| `sum` | The sum of all elements |
 | `dot2` | Same as `a dot a` |
 | `normalized` | Vector normalized to length 1 |
+| `shape` | Size of vector |
 | `(...x)` (`invoke`) | Returns a new array according to the indices passed *Note: I'm unsure if I should keep this* |
+
+*Any function with a lambda parameter is an inline function*
+
+| Function | Description |
+| ----- | ---- |
+| `applyMap((Number) -> Number): Self` | Apply-assign a function to each element, does not create a new array |
+| `map((Number) -> Number): Copy` | Apply a function to each element in a new array |
 
 ### Matrix Math
 
