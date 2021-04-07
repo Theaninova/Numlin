@@ -116,4 +116,16 @@ inline class DoubleVector(val data: DoubleArray) {
     operator fun rangeTo(other: IntVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
     operator fun rangeTo(other: ShortVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
     operator fun rangeTo(other: ByteVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
+
+    /// Component operator (destructuring)
+    operator fun component0() = data[0]
+    operator fun component1() = data[1]
+    operator fun component2() = data[2]
+    operator fun component3() = data[3]
+    operator fun component4() = data[4]
+    operator fun component5() = data[5]
+    operator fun component6() = data[6]
+    operator fun component7() = data[7]
+    operator fun component8() = data[8]
+    operator fun component9() = data[9]
 }
