@@ -2,7 +2,7 @@
 
 package vector
 
-import kotlin.math.min
+import kotlin.math.sqrt
 
 // @formatter:off
 inline class ByteVector(val data: ByteArray) {
@@ -60,40 +60,40 @@ inline class ByteVector(val data: ByteArray) {
     operator fun rem(b: Byte) = IntVector(shape) { data[it] % b }
     
     /// Primitive Vector Operations
-    operator fun plus(b: DoubleVector) = DoubleVector(min(shape, b.shape)) { data[it] + b[it] }
-    operator fun plus(b: FloatVector) = FloatVector(min(shape, b.shape)) { data[it] + b[it] }
-    operator fun plus(b: LongVector) = LongVector(min(shape, b.shape)) { data[it] + b[it] }
-    operator fun plus(b: IntVector) = IntVector(min(shape, b.shape)) { data[it] + b[it] }
-    operator fun plus(b: ShortVector) = IntVector(min(shape, b.shape)) { data[it] + b[it] }
-    operator fun plus(b: ByteVector) = IntVector(min(shape, b.shape)) { data[it] + b[it] }
+    operator fun plus(b: DoubleVector) = DoubleVector(shape) { data[it] + b[it] }
+    operator fun plus(b: FloatVector) = FloatVector(shape) { data[it] + b[it] }
+    operator fun plus(b: LongVector) = LongVector(shape) { data[it] + b[it] }
+    operator fun plus(b: IntVector) = IntVector(shape) { data[it] + b[it] }
+    operator fun plus(b: ShortVector) = IntVector(shape) { data[it] + b[it] }
+    operator fun plus(b: ByteVector) = IntVector(shape) { data[it] + b[it] }
 
-    operator fun minus(b: DoubleVector) = DoubleVector(min(shape, b.shape)) { data[it] - b[it] }
-    operator fun minus(b: FloatVector) = FloatVector(min(shape, b.shape)) { data[it] - b[it] }
-    operator fun minus(b: LongVector) = LongVector(min(shape, b.shape)) { data[it] - b[it] }
-    operator fun minus(b: IntVector) = IntVector(min(shape, b.shape)) { data[it] - b[it] }
-    operator fun minus(b: ShortVector) = IntVector(min(shape, b.shape)) { data[it] - b[it] }
-    operator fun minus(b: ByteVector) = IntVector(min(shape, b.shape)) { data[it] - b[it] }
+    operator fun minus(b: DoubleVector) = DoubleVector(shape) { data[it] - b[it] }
+    operator fun minus(b: FloatVector) = FloatVector(shape) { data[it] - b[it] }
+    operator fun minus(b: LongVector) = LongVector(shape) { data[it] - b[it] }
+    operator fun minus(b: IntVector) = IntVector(shape) { data[it] - b[it] }
+    operator fun minus(b: ShortVector) = IntVector(shape) { data[it] - b[it] }
+    operator fun minus(b: ByteVector) = IntVector(shape) { data[it] - b[it] }
 
-    operator fun times(b: DoubleVector) = DoubleVector(min(shape, b.shape)) { data[it] * b[it] }
-    operator fun times(b: FloatVector) = FloatVector(min(shape, b.shape)) { data[it] * b[it] }
-    operator fun times(b: LongVector) = LongVector(min(shape, b.shape)) { data[it] * b[it] }
-    operator fun times(b: IntVector) = IntVector(min(shape, b.shape)) { data[it] * b[it] }
-    operator fun times(b: ShortVector) = IntVector(min(shape, b.shape)) { data[it] * b[it] }
-    operator fun times(b: ByteVector) = IntVector(min(shape, b.shape)) { data[it] * b[it] }
+    operator fun times(b: DoubleVector) = DoubleVector(shape) { data[it] * b[it] }
+    operator fun times(b: FloatVector) = FloatVector(shape) { data[it] * b[it] }
+    operator fun times(b: LongVector) = LongVector(shape) { data[it] * b[it] }
+    operator fun times(b: IntVector) = IntVector(shape) { data[it] * b[it] }
+    operator fun times(b: ShortVector) = IntVector(shape) { data[it] * b[it] }
+    operator fun times(b: ByteVector) = IntVector(shape) { data[it] * b[it] }
 
-    operator fun div(b: DoubleVector) = DoubleVector(min(shape, b.shape)) { data[it] / b[it] }
-    operator fun div(b: FloatVector) = FloatVector(min(shape, b.shape)) { data[it] / b[it] }
-    operator fun div(b: LongVector) = LongVector(min(shape, b.shape)) { data[it] / b[it] }
-    operator fun div(b: IntVector) = IntVector(min(shape, b.shape)) { data[it] / b[it] }
-    operator fun div(b: ShortVector) = IntVector(min(shape, b.shape)) { data[it] / b[it] }
-    operator fun div(b: ByteVector) = IntVector(min(shape, b.shape)) { data[it] / b[it] }
+    operator fun div(b: DoubleVector) = DoubleVector(shape) { data[it] / b[it] }
+    operator fun div(b: FloatVector) = FloatVector(shape) { data[it] / b[it] }
+    operator fun div(b: LongVector) = LongVector(shape) { data[it] / b[it] }
+    operator fun div(b: IntVector) = IntVector(shape) { data[it] / b[it] }
+    operator fun div(b: ShortVector) = IntVector(shape) { data[it] / b[it] }
+    operator fun div(b: ByteVector) = IntVector(shape) { data[it] / b[it] }
 
-    operator fun rem(b: DoubleVector) = DoubleVector(min(shape, b.shape)) { data[it] % b[it] }
-    operator fun rem(b: FloatVector) = FloatVector(min(shape, b.shape)) { data[it] % b[it] }
-    operator fun rem(b: LongVector) = LongVector(min(shape, b.shape)) { data[it] % b[it] }
-    operator fun rem(b: IntVector) = IntVector(min(shape, b.shape)) { data[it] % b[it] }
-    operator fun rem(b: ShortVector) = IntVector(min(shape, b.shape)) { data[it] % b[it] }
-    operator fun rem(b: ByteVector) = IntVector(min(shape, b.shape)) { data[it] % b[it] }
+    operator fun rem(b: DoubleVector) = DoubleVector(shape) { data[it] % b[it] }
+    operator fun rem(b: FloatVector) = FloatVector(shape) { data[it] % b[it] }
+    operator fun rem(b: LongVector) = LongVector(shape) { data[it] % b[it] }
+    operator fun rem(b: IntVector) = IntVector(shape) { data[it] % b[it] }
+    operator fun rem(b: ShortVector) = IntVector(shape) { data[it] % b[it] }
+    operator fun rem(b: ByteVector) = IntVector(shape) { data[it] % b[it] }
     
     /// Broadcasting Assign Operations
     operator fun plusAssign(b: Byte) = data.forEachIndexed { i, _ -> data[i] = (data[i] + b).toByte() }
@@ -108,4 +108,12 @@ inline class ByteVector(val data: ByteArray) {
     operator fun timesAssign(b: ByteVector) = data.forEachIndexed { i, _ -> data[i] = (data[i] * b[i]).toByte() }
     operator fun divAssign(b: ByteVector) = data.forEachIndexed { i, _ -> data[i] = (data[i] / b[i]).toByte() }
     operator fun remAssign(b: ByteVector) = data.forEachIndexed { i, _ -> data[i] = (data[i] % b[i]).toByte() }
+
+    /// Euclidean Distance (Range Operator)
+    operator fun rangeTo(other: DoubleVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
+    operator fun rangeTo(other: FloatVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
+    operator fun rangeTo(other: LongVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
+    operator fun rangeTo(other: IntVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
+    operator fun rangeTo(other: ShortVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
+    operator fun rangeTo(other: ByteVector) = sqrt(data.foldIndexed(0.0) { i, acc, d -> acc + (d - other[i]).let { it * it } })
 }
