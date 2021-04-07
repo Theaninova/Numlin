@@ -1,6 +1,8 @@
 import complex.j
 import matrix.T
 import vector.dot
+import vector.xy
+import vector.yxw
 
 fun main() {
     val vector = vec(1.0, 2.0, 3.0)
@@ -9,5 +11,5 @@ fun main() {
     vector dot vector2
 
     // transpose
-    vector.T
+    vector.yxw
 }

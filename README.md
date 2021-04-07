@@ -23,6 +23,8 @@ combination of types and assignment operations
 
 * **Generator Constructor**, where `DoubleVector(5) { it * 2 }` evaluates to `[2, 4, 6, 8, 10]`
 
+* **GLSL Style Component Rearrange** `vector.xy + vector.yx`
+
 ### Matrix Math
 
 TODO;
