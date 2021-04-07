@@ -19,7 +19,12 @@ combination of types and assignment operations
 
 * (TODO) Element-wise operation overloads for `sin`, `cos`, etc.
 
-* **Index Access** overloads
+* **Index Access** overloads:
+  * Basic access `vector[0]`
+  * Negative Index to access elements from behind    
+  * Slicing `vector[0..3]`, `vector[0 until 3 step 2]`
+  * Rearranging `vector[vec(1, 2, 6, 3)]`
+  * Filtering `vector[booleanArrayOf(true, false, false)]`
 
 * **Generator Constructor**, where `DoubleVector(5) { it * 2 }` evaluates to `[2, 4, 6, 8, 10]`
 

@@ -9,6 +9,8 @@ fun main() {
 
     vector dot vector2
 
+    vector[0..2 step 2]
+
     // transpose
     vector.yxw + vector.zwx
 }

@@ -2,6 +2,7 @@
 
 package vector
 
+import kotlin.math.min
 import kotlin.math.sqrt
 
 // @formatter:off
@@ -14,8 +15,9 @@ inline class DoubleVector(val data: DoubleArray) {
     val shape get() = data.size
 
     /// Index Access
-    operator fun get(i: Int) = data[i]
-    operator fun set(i: Int, value: Double) = run { data[i] = value }
+    operator fun get(i: Int) = data[min(i, data.size + i)]
+    operator fun set(i: Int, value: Double) = run { data[min(i, data.size + i)] = value }
+    operator fun get(i: IntProgression) = DoubleVector((i.last - i.first + 1) / i.step) { get(it) }
     
     /// Unary operations
     operator fun unaryPlus()  = DoubleVector(data.size) { +data[it] }
