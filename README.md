@@ -30,6 +30,22 @@ combination of types and assignment operations
 
 * **GLSL Style Component Swizzling** `vector.xy + vector.yx`
 
+#### Examples
+
+* Operator Overloads
+```kotlin
+val a = vec(1, 0, 0)
+val b = vec(0, 1, 0)
+
+val distance = a..b // euclidean distance
+val c = a.xy + b.yx
+
+val d = vec(1, 2, 3, 4, 5, 6, 7, 8)
+val e = d[1..7 step 2] // [2, 4, 6, 8]
+
+val (x, y) = a
+```
+
 ### Matrix Math
 
 TODO;

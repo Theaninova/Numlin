@@ -17,7 +17,9 @@ inline class ByteVector(val data: ByteArray) {
     /// Index Access
     operator fun get(i: Int) = data[min(i, data.size + i)]
     operator fun set(i: Int, value: Byte) = run { data[min(i, data.size + i)] = value }
-    operator fun get(i: IntProgression) = ByteVector((i.last - i.first + 1) / i.step) { get(it) }
+    operator fun get(i: IntProgression) = ByteVector((i.last - i.first + 1) / i.step).apply {
+        i.forEachIndexed { i, v -> this@apply[i] = this@ByteVector[v] }
+    }
     
     /// Unary operations
     operator fun unaryPlus()  = IntVector(data.size) { +data[it] }

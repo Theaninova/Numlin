@@ -17,7 +17,9 @@ inline class DoubleVector(val data: DoubleArray) {
     /// Index Access
     operator fun get(i: Int) = data[min(i, data.size + i)]
     operator fun set(i: Int, value: Double) = run { data[min(i, data.size + i)] = value }
-    operator fun get(i: IntProgression) = DoubleVector((i.last - i.first + 1) / i.step) { get(it) }
+    operator fun get(i: IntProgression) = DoubleVector((i.last - i.first + 1) / i.step).apply {
+        i.forEachIndexed { i, v -> this@apply[i] = this@DoubleVector[v] }
+    }
     
     /// Unary operations
     operator fun unaryPlus()  = DoubleVector(data.size) { +data[it] }

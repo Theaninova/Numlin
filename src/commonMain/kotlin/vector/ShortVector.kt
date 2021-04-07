@@ -17,7 +17,9 @@ inline class ShortVector(val data: ShortArray) {
     /// Index Access
     operator fun get(i: Int) = data[min(i, data.size + i)]
     operator fun set(i: Int, value: Short) = run { data[min(i, data.size + i)] = value }
-    operator fun get(i: IntProgression) = ShortVector((i.last - i.first + 1) / i.step) { get(it) }
+    operator fun get(i: IntProgression) = ShortVector((i.last - i.first + 1) / i.step).apply {
+        i.forEachIndexed { i, v -> this@apply[i] = this@ShortVector[v] }
+    }
     
     /// Unary operations
     operator fun unaryPlus()  = IntVector(data.size) { +data[it] }
