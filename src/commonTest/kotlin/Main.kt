@@ -1,5 +1,6 @@
 import vector.dot
 import vector.vec
+import vector.x
 import vector.yxw
 import vector.zwx
 
@@ -9,7 +10,7 @@ fun main() {
 
     vector dot vector2
 
-    vector[0..2 step 2]
+    vector[0..0].x
 
     // transpose
     vector.yxw + vector.zwx
